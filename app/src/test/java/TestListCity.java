@@ -39,11 +39,24 @@ public class TestListCity {
     }
 
     @Test
+    /**
+     * function to test deleteCity
+     */
     public void deleteCityTest() {
         City testCity = new City("Halifax", "NS");
         list.addCity(testCity);
         assertTrue(list.hasCity(testCity));
         list.deleteCity(testCity);
         assertFalse(list.hasCity(testCity));
+    }
+
+    @Test
+    /**
+     * function to test  countCities
+     */
+    public void countCitiesTest() {
+        int listSize = list.getCount();
+        list.addCity(new City("Halifax", "NS"));
+        assertEquals(list.countCities(), listSize + 1);
     }
 }
